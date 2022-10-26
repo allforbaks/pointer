@@ -38,7 +38,11 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="title">Category</label>
-                                <input name="title" type="text" class="form-control" id="title" placeholder="Enter cateogry">
+                                <input name="title" type="text" class="form-control" id="title" placeholder="Enter cateogry" value={{ old('title') }}>
+                                @error('title')
+                                <div class="text-dange">This filed is required</div>
+                                @enderror
+
                             </div>
                             <div class="card-footer">
                                 <input type="submit" class="btn btn-primary" value="Submit"></input>
