@@ -65,7 +65,7 @@
                                                 @method('DELETE')
                                                 <button type="submit" class='border-0 bg-transparent'>Delete</button>
                                             </form>
-                                            <a href="/admin/category/edit/{{ $category->id }}" class="mr-3">Edit</a>
+                                            <a href="/admin/category/{{ $category->id }}/edit" class="mr-3">Edit</a>
                                         </td>
                                     </tr>
                                     @endforeach
