@@ -46,19 +46,19 @@
                             </div>
                             <div class="form-group">
                                 <label for="category">Category</label>
-                                <select name="category" class="form-control" id="category">
+                                <select name="category_id" class="form-control" id="category">
                                     @foreach ($categories as $category)
                                     <option value={{ $category->id }}>{{ $category->title }}</option>
                                     @endforeach
                                 </select>
                             </div>
-                            <!-- <div class="form-group">
+                            <div class="form-group">
                                 <label for="content">Content</label>
                                 <textarea id="summernote" name="content" value={{ old('content') }}></textarea>
                                 @error('content')
                                 <div class="text-dange">Field 'content' is required</div>
                                 @enderror
-                            </div> -->
+                            </div>
                             <!-- <div class="form-group">
                                 <label for="exampleInputFile">File input</label>
                                 <div class="input-group">

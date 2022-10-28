@@ -25,8 +25,8 @@ class PostController extends Controller
     public function store(StoreRequest $request)
     {
         $data = $request->validated();
-        dd($data);
-        Post::create($data);
-        return view('admin.posts.create');
+
+        Post::firstOrCreate($data);
+        return redirect()->route('admin.posts.index');
     }
 }

@@ -50,6 +50,7 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Category</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -57,6 +58,15 @@
                                     <tr>
                                         <td>{{ $category->id }}</td>
                                         <td>{{ $category->title }}</td><br>
+                                        <td class="form-row">
+                                            <a href="{{ route('admin.category.show', $category->id) }}" class="mr-3">Show</a>
+                                            <form action="{{ route('admin.category.delete', $category->id) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class='border-0 bg-transparent'>Delete</button>
+                                            </form>
+                                            <a href="/admin/category/edit/{{ $category->id }}" class="mr-3">Edit</a>
+                                        </td>
                                     </tr>
                                     @endforeach
                                 </tbody>
