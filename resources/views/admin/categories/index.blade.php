@@ -57,7 +57,7 @@
                                     @foreach($categories as $category)
                                     <tr>
                                         <td>{{ $category->id }}</td>
-                                        <td>{{ $category->title }}</td><br>
+                                        <td>{{ $category->title }}</td>
                                         <td class="form-row">
                                             <a href="{{ route('admin.category.show', $category->id) }}" class="mr-3">Show</a>
                                             <form action="{{ route('admin.category.delete', $category->id) }}" method="POST">

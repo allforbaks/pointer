@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Category\StoreRequest;
+use App\Http\Requests\Admin\Category\UpdateRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::paginate(10);
+        $categories = Category::paginate(20);
         return view('admin.categories.index', compact('categories'));
     }
 
@@ -60,9 +61,12 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(UpdateRequest $request, Category $category)
     {
-        //
+        $data = $request->validated();
+        $category->update($data);
+
+        return view('admin.categories.update', compact($category));
     }
 
     /**
