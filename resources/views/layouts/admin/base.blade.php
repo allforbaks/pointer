@@ -31,7 +31,7 @@
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <li><a href={{ route('admin.posts.index') }} class="nav-link">Posts</a></li>
-                    <li><a href={{ route('admin.category.index') }} class="nav-link">Categories</a></li>
+                    <li><a href={{ route('admin.categories.index') }} class="nav-link">Categories</a></li>
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->

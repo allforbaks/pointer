@@ -32,12 +32,13 @@ Route::prefix('admin')->group(function () {
         Route::post('/', [PostController::class, 'store'])->name('admin.posts.store');
     });
 
-    Route::prefix('category')->group(function () {
-        Route::get('/', [CategoryController::class, 'index'])->name('admin.category.index');
-        Route::get('/create', [CategoryController::class, 'create'])->name('admin.category.create');
-        Route::patch('/{category}', [CategoryController::class, 'update'])->name('admin.category.update');
-        Route::post('/', [CategoryController::class, 'store'])->name('admin.category.store');
-        Route::get('/{category}', [CategoryController::class, 'show'])->name('admin.category.show');
-        Route::delete('/{category}', [CategoryController::class, 'destroy'])->name('admin.category.delete');
+    Route::prefix('categories')->group(function () {
+        Route::get('/', [CategoryController::class, 'index'])->name('admin.categories.index');
+        Route::get('/create', [CategoryController::class, 'create'])->name('admin.categories.create');
+        Route::patch('/{category}', [CategoryController::class, 'update'])->name('admin.categories.update');
+        Route::post('/', [CategoryController::class, 'store'])->name('admin.categories.store');
+        Route::get('/{category}/edit', [CategoryController::class, 'edit'])->name('admin.categories.edit');
+        Route::get('/{category}', [CategoryController::class, 'show'])->name('admin.categories.show');
+        Route::delete('/{category}', [CategoryController::class, 'delete'])->name('admin.categories.delete');
     });
 });

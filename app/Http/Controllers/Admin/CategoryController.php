@@ -61,12 +61,12 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(UpdateRequest $request, Category $category)
+    public function update(UpdateRequest $request, Category $category)
     {
         $data = $request->validated();
         $category->update($data);
 
-        return view('admin.categories.update', compact($category));
+        return view('admin.categories.show', compact('category'));
     }
 
     /**
@@ -76,9 +76,9 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function edit(Request $request, Category $category)
     {
-        //
+        return view('admin.categories.edit', compact('category'));
     }
 
     /**
@@ -87,9 +87,9 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function delete(Category $category)
     {
         $category->delete();
-        return redirect()->route('admin.category.index');
+        return redirect()->route('admin.categories.index');
     }
 }

@@ -33,12 +33,13 @@
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form method="POST" action={{ route('admin.category.store') }}>
+                    <form method="POST" action={{ route('admin.categories.update', $category->id) }}>
                         @csrf
+                        @method('PATCH')
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="title">Category</label>
-                                <input name="title" type="text" class="form-control" id="title" placeholder="Enter cateogry" value={{ old('title') }}>
+                                <input name="title" type="text" class="form-control" id="title" placeholder="Enter cateogry" value={{ $category->title }}>
                                 @error('title')
                                 <div class="text-dange">This filed is required</div>
                                 @enderror

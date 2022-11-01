@@ -10,7 +10,7 @@
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1 class="m-0">Categories</h1>
-                    <a class="btn btn-block btn-primary btn-simple" href={{ route('admin.category.create')}}>Add category</a>
+                    <a class="btn btn-block btn-primary btn-simple" href={{ route('admin.categories.create')}}>Add category</a>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -58,11 +58,11 @@
                                         <td>{{ $category->id }}</td>
                                         <td>{{ $category->title }}</td><br>
                                         <td>
-                                            <form action="{{ route('admin.category.delete', $category->id) }}" method="POST">
+                                            <form action="{{ route('admin.categories.delete', $category->id) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class='border-0 bg-transparent'>Delete</button>
-                                                <a href="/admin/category/{{ $category->id }}/edit" class="mr-3">Edit</a>
+                                                <a href="/admin/categories/{{ $category->id }}/edit" class="mr-3">Edit</a>
                                             </form>
                                         </td>
                                     </tr>
