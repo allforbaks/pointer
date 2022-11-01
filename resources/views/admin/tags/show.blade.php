@@ -9,13 +9,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Categories</h1>
-                    <a class="btn btn-block btn-primary btn-simple" href={{ route('admin.categories.create')}}>Add category</a>
+                    <h1 class="m-0">Tags</h1>
+                    <a class="btn btn-block btn-primary btn-simple" href={{ route('admin.tags.create')}}>Add tag</a>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Categories</li>
+                        <li class="breadcrumb-item active">Tags</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -31,7 +31,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">All Categories</h3>
+                            <h3 class="card-title">{{ $tag->title }}</h3>
 
                             <div class="card-tools">
                                 <div class="input-group input-group-sm" style="width: 150px;">
@@ -49,26 +49,23 @@
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Category</th>
+                                        <th>Tag</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($categories as $category)
                                     <tr>
-                                        <td>{{ $category->id }}</td>
-                                        <td>{{ $category->title }}</td>
-                                        <td class="form-row">
-                                            <a href="{{ route('admin.categories.show', $category->id) }}" class="mr-3">Show</a>
-                                            <form action="{{ route('admin.categories.delete', $category->id) }}" method="POST">
+                                        <td>{{ $tag->id }}</td>
+                                        <td>{{ $tag->title }}</td><br>
+                                        <td>
+                                            <form action="{{ route('admin.tags.delete', $tag->id) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class='border-0 bg-transparent'>Delete</button>
+                                                <a href="/admin/tags/{{ $tag->id }}/edit" class="mr-3">Edit</a>
                                             </form>
-                                            <a href="/admin/categories/{{ $category->id }}/edit" class="mr-3">Edit</a>
                                         </td>
                                     </tr>
-                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

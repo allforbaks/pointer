@@ -31,7 +31,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">All Categories</h3>
+                            <h3 class="card-title">{{ $category->title }}</h3>
 
                             <div class="card-tools">
                                 <div class="input-group input-group-sm" style="width: 150px;">
@@ -54,21 +54,18 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($categories as $category)
                                     <tr>
                                         <td>{{ $category->id }}</td>
-                                        <td>{{ $category->title }}</td>
-                                        <td class="form-row">
-                                            <a href="{{ route('admin.categories.show', $category->id) }}" class="mr-3">Show</a>
+                                        <td>{{ $category->title }}</td><br>
+                                        <td>
                                             <form action="{{ route('admin.categories.delete', $category->id) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class='border-0 bg-transparent'>Delete</button>
+                                                <a href="/admin/categories/{{ $category->id }}/edit" class="mr-3">Edit</a>
                                             </form>
-                                            <a href="/admin/categories/{{ $category->id }}/edit" class="mr-3">Edit</a>
                                         </td>
                                     </tr>
-                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -78,6 +75,10 @@
                 </div>
             </div>
             <!-- /.row -->
+            <!-- Main row -->
+            <div class="row">
+            </div>
+            <!-- /.row (main row) -->
         </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
