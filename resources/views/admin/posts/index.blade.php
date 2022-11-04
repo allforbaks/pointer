@@ -57,7 +57,7 @@
                                     @foreach($posts as $post)
                                     <tr>
                                         <td>{{ $post->id }}</td>
-                                        <td>{{ $post->title }}</td><br>
+                                        <td>{{ $post->title }}</td>
                                         <td>
                                             <a class="ml-3" href="#">View</a>
                                             <a class="ml-3" href="#">Edit</a>

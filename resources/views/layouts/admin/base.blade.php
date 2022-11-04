@@ -17,6 +17,9 @@
 
     <!-- include summernote css/js-->
     <link href={{ asset('plugins/summernote/summernote-bs5.css') }} rel="stylesheet">
+
+    <!-- Select2 -->
+    <link rel="stylesheet" href={{ asset("plugins/select2/css/select2.min.css") }}>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -58,6 +61,10 @@
                 ]
             });
         });
+
+        $(function() {
+                    //Initialize Select2 Elements
+                    $('.select2').select2();
     </script>
 </body>
 
