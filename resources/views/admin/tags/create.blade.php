@@ -42,7 +42,6 @@
                                 @error('title')
                                 <div class="text-dange">This filed is required</div>
                                 @enderror
-
                             </div>
                             <div class="card-footer">
                                 <input type="submit" class="btn btn-primary" value="Submit"></input>

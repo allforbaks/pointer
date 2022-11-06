@@ -59,6 +59,14 @@
                                 <div class="text-dange">Field 'content' is required</div>
                                 @enderror
                             </div>
+                            <div class="form-group">
+                                <label>Tags</label>
+                                <select class="select2" multiple="multiple" data-placeholder="Select a tags" style="width: 100%;" name="tag_ids[]" value={{ old('tags') }}>
+                                    @foreach ($tags as $tag)
+                                    <option {{ is_array( old('tag_ids')) && in_array($tag->id, old('tag_ids')) ? 'selected' : '' }} value="{{ $tag->id }}">{{ $tag->title }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                             <!-- <div class="form-group">
                                 <label for="exampleInputFile">File input</label>
                                 <div class="input-group">

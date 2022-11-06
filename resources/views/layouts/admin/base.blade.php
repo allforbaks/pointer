@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Admin Panel</title>
 
+    <link rel="stylesheet" href={{ asset("plugins/select2/css/select2.min.css") }}>
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <link rel="stylesheet" href={{ asset("css/admin.css") }}>
@@ -19,7 +20,6 @@
     <link href={{ asset('plugins/summernote/summernote-bs5.css') }} rel="stylesheet">
 
     <!-- Select2 -->
-    <link rel="stylesheet" href={{ asset("plugins/select2/css/select2.min.css") }}>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -46,6 +46,7 @@
     @yield ('content')
 
     <script src={{ asset("plugins/bootstrap/js/bootstrap.bundle.min.js") }}></script>
+    <script src={{ asset('plugins/select2/js/select2.full.min.js') }}></script>
     <script src={{ asset('plugins/summernote/summernote-bs5.js') }}></script>
     <script>
         $(document).ready(function() {
@@ -63,8 +64,9 @@
         });
 
         $(function() {
-                    //Initialize Select2 Elements
-                    $('.select2').select2();
+            //Initialize Select2 Elements
+            $('.select2').select2();
+        });
     </script>
 </body>
 
